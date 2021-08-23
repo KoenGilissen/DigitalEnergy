@@ -1,13 +1,12 @@
 #!/bin/bash
-dayEpoch=86400000000000
-now=$(date +%s%N)
-tdiff=$((now - dayEpoch))
+dayEpoch=86400000000000 #number of ns in a day
+now=$(date +%s%N) #current EPOCH (ns)
+tdiff=$((now - dayEpoch)) #time diff in EPOCH ns 
 
-echo "$now"
-echo "$tdiff"
-
+#build query
 query="SELECT * FROM datapoint WHERE time >= "$tdiff" AND time <= "$now""
 
-#influx -database 'digitalEnergy' -execute 'SELECT * FROM datapoint WHERE time >= "$tdiff" AND time <= "$now"' -format csv > test.csv
+
+#query
 influx -database 'digitalEnergy' -execute "$query" -format csv > test.csv
-# influx -database 'powerConsumption' -execute 'SELECT * FROM datapoint WHERE time > now() - 100d' -format csv > powerConsumption.csv
+
