@@ -17,4 +17,7 @@ query="SELECT * FROM datapoint WHERE time >= "$tdiff" AND time <= "$now""
 #query
 influx -database 'digitalEnergy' -execute "$query" -format csv > "$fileName"
 
+#backup to google drive
+rclone copy "$fileName" googleDrive:DigitalEnergyData
+
 
