@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#
+# $crontab -e
 # Script is run every day at 00:00
 # 0 0 * * * /home/pi/DigitalEnergy/influxQuery.sh
 #
