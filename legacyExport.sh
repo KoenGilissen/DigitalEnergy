@@ -4,9 +4,9 @@ echo "$1"
 
 #date --date='@2147483647'
 time=$(( $1 / 1000000000))
-echo "$time"
 currentData=`date -d@"$time"`
-echo "$currentData"
+
+echo "date argument: $currentData"
 
 #fileName=$(date +"/home/pi/influxExport/%Y%m%d_%a.csv") #construct filename e.g. 20210823_mon.csv
 
