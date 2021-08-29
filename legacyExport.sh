@@ -4,7 +4,7 @@ echo "$1"
 
 #date --date='@2147483647'
 time=$(( $1 / 1000000000))
-currentData=`date -d@"$time"`
+currentData=`date +"%Y%m%d" -d@"$time"`
 
 echo "date argument: $currentData"
 
