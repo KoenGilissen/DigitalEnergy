@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # Create API CALL Solcast
     solcast_endpoint = "https://api.solcast.com.au/world_radiation/forecasts"
     solcast_parameters = {"latitude": latitude, "longitude": longitude, "hours": 24,
-                          "api_key": "CwY233fnKpxH1RwNr43pZnUuopKlnC_C", "format": "json"}
+                          "api_key": "XXXX", "format": "json"}
     # Create filename based on current Time and Date
     SolcastFilename = create_filename(currentTimeString + "_solcast.json")
     # Do the Request
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     # Create API CALL Open Weather
     openWeather_endpoint = "https://pro.openweathermap.org/data/2.5/forecast/hourly"
     openWeather_parameters = {"lat": latitude, "lon": longitude, "mode": "json", "units": "metric",
-                              "appid": "2ddb6a0d75a6770a85d6ae06166bb69c"}
+                              "appid": "xxxx"}
     openWeather_request = requests.get(url=openWeather_endpoint, params=openWeather_parameters)
     if openWeather_request.status_code != 200:
         sys.exit("[ERROR] Open Weather request returned: " + str(openWeather_request.status_code))
